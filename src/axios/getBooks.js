@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { setBooks } from '../redux/actions/booksActions';
 
-export const getBooks = (query, startIndex, sorting, subject) => {
+export const getBooks = (query='lsd', startIndex = 0, sorting = 'relevance', subject = 'all') => {
   return async dispatch => {
 
+    if(query.trim() === '') {
+      return;
+    }
     try {
 
       const result = await axios({
@@ -19,6 +22,7 @@ export const getBooks = (query, startIndex, sorting, subject) => {
         },
       })
       dispatch(setBooks(result.data.items))
+      console.log('fetch')
     }
     
     catch(err) {
