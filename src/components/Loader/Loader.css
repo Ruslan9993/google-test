@@ -1,0 +1,41 @@
+.bouncer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  bottom: 100px;
+}
+
+.bouncer div {
+  width: 10px;
+  height: 10px;
+  background-color: #5b646e;
+
+  animation: bouncer 0.5s ease  infinite alternate;
+}
+
+.bouncer div:nth-child(2) {
+  animation-delay: .1s;
+  background-color: #5a728d;
+
+}
+.bouncer div:nth-child(3) {
+  animation-delay: .2s;
+  background-color: #7c96b4;
+}
+.bouncer div:nth-child(4) {
+  animation-delay: .3s;
+  background-color: #6188b4;
+}
+@keyframes bouncer {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50px);
+
+  }
+}

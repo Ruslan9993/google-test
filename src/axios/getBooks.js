@@ -1,14 +1,15 @@
 import axios from 'axios';
 import { setBooks } from '../redux/actions/booksActions';
+import { setLoading } from '../redux/actions/searchActions';
 
-export const getBooks = (query='lsd', startIndex = 0, sorting = 'relevance', subject = 'all') => {
+export const getBooks = (query='lsd', startIndex, sorting, subject) => {
   return async dispatch => {
 
     if(query.trim() === '') {
       return;
     }
     try {
-
+      dispatch(setLoading(true))
       const result = await axios({
         method: 'GET',
         url: 'https://www.googleapis.com/books/v1/volumes',
@@ -22,6 +23,7 @@ export const getBooks = (query='lsd', startIndex = 0, sorting = 'relevance', sub
         },
       })
       dispatch(setBooks(result.data.items))
+      dispatch(setLoading(false))
       console.log('fetch')
     }
     

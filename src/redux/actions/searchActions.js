@@ -2,6 +2,7 @@ export const CHANGE_VALUE = 'CHANGE_VALUE'
 export const SET_QUERY = 'SET_QUERY';
 export const CHANGE_SORTING = 'CHANGE_SORTING';
 export const CHANGE_SUBJECT = 'CHANGE_SUBJECT';
+export const SET_LOADING = 'SET_LOADING';
 
 export const changeValue = payload => {
   return {
@@ -27,6 +28,13 @@ export const changeSorting = payload => {
 export const changeSubject = payload => {
   return {
     type: CHANGE_SUBJECT,
+    payload
+  }
+}
+
+export const setLoading = payload => {
+  return {
+    type: SET_LOADING,
     payload
   }
 }
