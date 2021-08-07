@@ -3,6 +3,7 @@ export const SET_QUERY = 'SET_QUERY';
 export const CHANGE_SORTING = 'CHANGE_SORTING';
 export const CHANGE_SUBJECT = 'CHANGE_SUBJECT';
 export const SET_LOADING = 'SET_LOADING';
+export const CHANGE_INDEX = 'CHANGE_INDEX';
 
 export const changeValue = payload => {
   return {
@@ -36,5 +37,11 @@ export const setLoading = payload => {
   return {
     type: SET_LOADING,
     payload
+  }
+}
+
+export const changeIndex = () => {
+  return {
+    type: CHANGE_INDEX
   }
 }

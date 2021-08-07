@@ -2,7 +2,7 @@ import axios from 'axios';
 import { setBooks } from '../redux/actions/booksActions';
 import { setLoading } from '../redux/actions/searchActions';
 
-export const getBooks = (query='lsd', startIndex, sorting, subject) => {
+export const getBooks = (query, startIndex, sorting, subject) => {
   return async dispatch => {
 
     if(query.trim() === '') {

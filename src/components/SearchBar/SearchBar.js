@@ -19,6 +19,8 @@ export const SearchBar = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch(setQuery(''))
+    dispatch(zeroBooks())
     dispatch(setQuery(value))
 
   }
@@ -28,12 +30,13 @@ export const SearchBar = () => {
   }, [query, sorting, subject, dispatch]);
 
   useEffect(() => {
-    dispatch(getBooks(query))
+    dispatch(getBooks(query, startIndex, sorting, subject))
   }, [dispatch, query, sorting, subject, startIndex])
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input 
+          type='text'
           value={value}
           onChange={handleChange}
         />

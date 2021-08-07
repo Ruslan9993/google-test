@@ -9,9 +9,8 @@ export const setBooks = payload => {
   }
 }
 
-export const zeroBooks = payload => {
+export const zeroBooks = () => {
   return {
     type: ZERO_BOOKS,
-    payload
   }
 }

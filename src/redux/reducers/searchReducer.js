@@ -3,7 +3,8 @@ import {
   SET_QUERY,
   CHANGE_SORTING,
   CHANGE_SUBJECT,
-  SET_LOADING
+  SET_LOADING,
+  CHANGE_INDEX
 } from "../actions/searchActions";
 
 const initialState = {
@@ -27,6 +28,8 @@ export const searchReducer = (state = initialState, { type, payload }) => {
       return { ...state, subject: payload };
     case SET_LOADING:
       return { ...state, loading: payload };
+    case CHANGE_INDEX:
+      return { ...state, startIndex: state.startIndex + 30 };
     default:
       return state;
   }
