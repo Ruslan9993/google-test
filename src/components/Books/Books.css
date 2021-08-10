@@ -1,0 +1,25 @@
+.books {
+  padding: 10px;
+}
+
+.books__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.books__btn {
+  text-align: center;
+}
+
+button {
+  all: unset;
+  border: 1px solid #000;
+  padding: 4px;
+  border-radius: 10px;
+  transition: all .3s;
+}
+
+button:hover {
+  background-color: rgb(132, 110, 194);
+}

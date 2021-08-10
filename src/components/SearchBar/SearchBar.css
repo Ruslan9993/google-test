@@ -1,0 +1,52 @@
+.icon {
+  color: blue;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  transform: scale(1.3);
+}
+
+
+form {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: 1px solid rgb(150, 135, 135);
+  padding: 10px;
+}
+.search-bar__input {
+  position: relative;
+}
+
+.search-bar {
+  background-image: url('../../images/books-img.jpg');
+  padding: 50px;
+  color: #fff;
+}
+
+.search-bar__form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.col {
+  display: flex;
+}
+
+.search-bar__title {
+  font-size: calc(20px + (56 - 20) * ((100vw - 300px) / (1900 - 300)));
+  text-align: center;
+  font-weight: bold;
+}
+
+.search-selects {
+  display: flex;
+  font-size: 16px;
+  margin: 20px;
+  justify-content: center; 
+}

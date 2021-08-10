@@ -8,6 +8,7 @@ export const LoadMore = () => {
   const handleClick = () => {
     dispatch(changeIndex())
   }
+
   return (
     <button onClick={handleClick}>
       Click!

@@ -13,7 +13,7 @@
   height: 10px;
   background-color: #5b646e;
 
-  animation: bouncer 0.5s ease  infinite alternate;
+  animation: bouncer 0.7s ease  infinite alternate;
 }
 
 .bouncer div:nth-child(2) {

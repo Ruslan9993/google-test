@@ -4,7 +4,8 @@ import {
   CHANGE_SORTING,
   CHANGE_SUBJECT,
   SET_LOADING,
-  CHANGE_INDEX
+  CHANGE_INDEX,
+  SET_DETAILS_LOADER
 } from "../actions/searchActions";
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   sorting: "relevance",
   subject: "all",
   loading: false,
+  detailsLoader: false,
 };
 
 export const searchReducer = (state = initialState, { type, payload }) => {
@@ -30,6 +32,8 @@ export const searchReducer = (state = initialState, { type, payload }) => {
       return { ...state, loading: payload };
     case CHANGE_INDEX:
       return { ...state, startIndex: state.startIndex + 30 };
+    case SET_DETAILS_LOADER:
+      return { ...state, detailsLoader: payload };
     default:
       return state;
   }

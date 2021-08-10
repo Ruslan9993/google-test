@@ -1,13 +1,21 @@
-import axios from 'axios';
-import { setDetails } from '../redux/actions/booksActions';
+import axios from "axios";
+import { setDetails } from "../redux/actions/booksActions";
+import { setDetailsLoader } from '../redux/actions/searchActions';
 
 export const getBookDetails = (match) => {
-  return async dispatch => {
+  return async (dispatch) => {
+    try {
+      dispatch(setDetailsLoader(true))
+      const result = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes/${match}`
+      );
 
-    const result = await axios.get(`https://www.googleapis.com/books/v1/volumes/${match}`);
+      console.log(result.data)
+      dispatch(setDetails(result.data));
+      dispatch(setDetailsLoader(false))
 
-    dispatch(setDetails(result.data));
-    console.log('this',result.data)
-    console.log('I love sucking big dicks!')
-  }
-}
+    } catch (err) {
+      console.log("this is", err);
+    }
+  };
+};
