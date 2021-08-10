@@ -71,6 +71,7 @@ export const SearchBar = () => {
             <select
               id="subject"
               onChange={(e) => dispatch(changeSubject(e.target.value))}
+              className='select'
             >
               <option>All</option>
               <option>Art</option>
@@ -86,6 +87,8 @@ export const SearchBar = () => {
             <select
               id="sorting"
               onChange={(e) => dispatch(changeSorting(e.target.value))}
+              className='select'
+
             >
               <option>Relevance</option>
               <option>Newest</option>
